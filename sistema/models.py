@@ -63,7 +63,7 @@ class RevistaEspaco(models.Model):
 
 class Banner(models.Model):
     nome = models.CharField(max_length=200)
-    imagem = models.ImageField(upload_to='imagens-combo')
+    imagem = models.ImageField(upload_to='imagens-banner')
     def __str__(self):
         return self.nome
 
