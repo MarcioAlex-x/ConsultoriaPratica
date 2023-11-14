@@ -1,0 +1,133 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h5 class="my-3 h1">Revistas</h5>
+<div class="revistas row">
+    <!-- Consultoria -->
+    {% for revista in consultoria %}
+    <div class=" col-lg-5 col-sm-12 my-3 offset-1">
+        <div class="d-flex justify-content-between py-2">
+            <span class="fs-4 fonte-marca">{{ revista.marca }}</span>
+            <span class="fs-4 fonte-marca">Ciclo: {{ revista.ciclo }}</span>
+
+        </div>
+        <hr>
+        <div class="container-revista">
+            <img src="{{ revista.imagemRevista.url }}"
+                alt="imagem da revista {{revista.marca}} do ciclo {{revista.ciclo}}" class="img-fluid w-100">
+        </div>
+        <div class="container-infos">
+            <p>Início do ciclo: {{ revista.incioCiclo }}</p>
+            <p>Final do ciclo: {{ revista.fimCiclo }}</p>
+            {% if revista.linkRevista %}
+            <a href="{{revista.linkRevista}}">
+                <p>Link da revista</p>
+            </a>
+            {% else %}
+            <p>Esta revista não possui link</p>
+            {% endif %}
+            <a href="{% url 'download_revista_estilo' id=revista.id %}">
+                <button class="btn btn-primary btn-sm">
+                    Baixar Revista
+                </button>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+    <!-- Espaço -->
+    {% for revista in espaco %}
+    <div class="col-lg-5 col-sm-12 my-3 offset-1">
+        <div class="d-flex justify-content-between py-2 ">
+            <span class="fs-4 fonte-marca">{{ revista.marca }}</span>
+            <span class="fs-4 fonte-marca">Ciclo: {{ revista.ciclo }}</span>
+        </div>
+        <hr>
+        <div class="container-revista">
+            <img src="{{ revista.imagemRevista.url }}"
+                alt="imagem da revista {{revista.marca}} do ciclo {{revista.ciclo}}" class="img-fluid w-100">
+        </div>
+        <div class="container-infos">
+            <p>Início do ciclo: {{ revista.incioCiclo }}</p>
+            <p>Final do ciclo: {{ revista.fimCiclo }}</p>
+
+            {% if revista.linkRevista %}
+            <a href="{{revista.linkRevista}}">
+                <p>Link da revista</p>
+            </a>
+            {% else %}
+            <p>Esta revista não possui link</p>
+            {% endif %}
+            
+            <a href="{% url 'download_revista_estilo' id=revista.id %}">
+                <button class="btn btn-primary btn-sm">
+                    Baixar Revista
+                </button>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+    <!-- Avon -->
+    {% for revista in avon %}
+    <div class="col-lg-5 col-sm-12 my-3 offset-1">
+        <div class="d-flex justify-content-between py-2">
+            <span class="fs-4 fonte-marca">{{ revista.marca }}</span>
+            <span class="fs-4 fonte-marca">Ciclo: {{ revista.ciclo }}</span>
+        </div>
+        <hr>
+        <div class="container-revista">
+            <img src="{{ revista.imagemRevista.url }}"
+                alt="imagem da revista {{revista.marca}} do ciclo {{revista.ciclo}}" class="img-fluid w-100">
+        </div>
+        <div class="container-infos">
+            <p>Início do ciclo: {{ revista.incioCiclo }}</p>
+            <p>Final do ciclo: {{ revista.fimCiclo }}</p>
+
+            {% if revista.linkRevista %}
+            <a href="{{revista.linkRevista}}">
+                <p>Link da revista</p>
+            </a>
+            {% else %}
+            <p>Esta revista não possui link</p>
+            {% endif %}
+            <a href="{% url 'download_revista_estilo' id=revista.id %}">
+                <button class="btn btn-primary btn-sm">
+                    Baixar Revista
+                </button>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+    <!-- Casa e Estilo -->
+    {% for revista in estilo %}
+    <div class="col-lg-5 col-sm-12 my-3 offset-1">
+        <div class="d-flex justify-content-between py-2">
+            <span class="fs-4 fonte-marca">{{ revista.marca }}</span>
+            <span class="fs-4 fonte-marca">Ciclo: {{ revista.ciclo }}</span>
+        </div>
+        <hr>
+        <div class="container-revista">
+            <img src="{{ revista.imagemRevista.url }}"
+                alt="imagem da revista {{revista.marca}} do ciclo {{revista.ciclo}}" class="img-fluid w-100">
+        </div>
+        <div class="container-infos">
+            <p>Início do ciclo: {{ revista.incioCiclo }}</p>
+            <p>Final do ciclo: {{ revista.fimCiclo }}</p>
+            {% if revista.linkRevista %}
+            <a href="{{revista.linkRevista}}">
+                <p>Link da revista</p>
+            </a>
+            {% else %}
+            <p>Esta revista não possui link</p>
+            {% endif %}
+            <a href="{% url 'download_revista_estilo' id=revista.id %}">
+                <button class="btn btn-primary btn-sm">
+                    Baixar Revista
+                </button>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

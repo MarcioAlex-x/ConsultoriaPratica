@@ -1,0 +1,19 @@
+<!-- Combos -->
+<h5 class="mt-3 h1">Combos</h5>
+{% if combo %}
+<p>Clique na imagem para fazer o download!</p>
+<div class="combos row">
+    
+    {% for combo in combo %}
+    <div class="col-6 col-lg-4 banner-combo">
+        <a href="{% url 'download_imagem_combo' id=combo.id %}">
+            <img src="{{ combo.imagemCombo.url }}"
+                alt="imagem do combo da {{combo.marca}} do ciclo {{combo.ciclo}} para o nível {{combo.nivel}}"
+                class="img-fluid w-100">
+        </a>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p>Sem combos no momento</p>
+    {% endif %}
+</div>

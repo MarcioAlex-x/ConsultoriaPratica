@@ -1,0 +1,38 @@
+.fonte-marca{
+    font-family:'Anton', sans-serif;
+}
+.container-revista{
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner-combo{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* .banner-combo img{
+    width: 100%;
+} */
+.banner-aside{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+}
+.banner-aside img{
+    width: 100%;
+    margin: auto;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    margin-top: 70px;
+}

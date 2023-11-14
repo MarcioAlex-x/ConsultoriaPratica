@@ -1,0 +1,9 @@
+<div class="banners col-12 mt-5 pt-5">
+    {% if banner %}
+    {% for banner in banner %}
+        <img class="banner-aside" src="{{banner.imagem.url}}" alt="imagem do banner" class="img-fluid w-100">
+    {% endfor %}
+    {% else %}
+    <p>Em breve terão alguns banners aqui!</p>
+    {% endif %}
+</div>
